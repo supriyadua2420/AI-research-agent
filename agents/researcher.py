@@ -1,5 +1,6 @@
 from crewai import Agent
 from tools.fetch_arxiv import FetchArxivPapersTool
+from llm_config import ollama_llm   # import your config
 
 arxiv_search_tool = FetchArxivPapersTool()
 
@@ -9,4 +10,5 @@ researcher = Agent(
     backstory="You are a senior researcher with a deep understanding of AI research. You identify the best papers based on title and abstract.",
     verbose=True,
     tools=[arxiv_search_tool],
+    llm=ollama_llm 
 )
