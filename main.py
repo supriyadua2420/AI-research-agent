@@ -78,7 +78,16 @@
 # if papers:
 #     print("First paper title:", papers[0]['title'])
 
+from dotenv import load_dotenv
+import os
 from crew.arxiv_research import arxiv_research_crew
+
+# Load environment variables from .env file
+load_dotenv()
+
+# (Optional) Debug: check if key is loaded
+# if not os.getenv("OPENAI_API_KEY"):
+#     raise ValueError("❌ OPENAI_API_KEY not found. Please set it in your .env file.")
 
 crew_inputs = {
     "date": "2025-03-12"  # Change date as needed
